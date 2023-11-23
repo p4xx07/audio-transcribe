@@ -1,5 +1,6 @@
 import argparse
 import os
+import time
 
 import speech_recognition as sr
 import subprocess
@@ -8,8 +9,10 @@ from pydub import AudioSegment
 
 def extract_audio_from_video(video_file):
     output_audio = "temp_audio.wav"
-    subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", video_file, "-vn", "-acodec", "pcm_s16le", "-ar", "44100", output_audio],
-                   check=True)
+    subprocess.run(
+        ["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", video_file, "-vn", "-acodec", "pcm_s16le", "-ar",
+         "44100", output_audio],
+        check=True)
 
     return output_audio
 
@@ -61,4 +64,9 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
+    start_time = time.time()
     transcribe_audio(args.input, args.output, args.chunk, args.start)
+    end_time = time.time()
+
+    duration = end_time - start_time
+    print(f"Transcription completed in {duration:.2f} seconds.")
