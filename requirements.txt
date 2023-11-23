@@ -1,2 +1,2 @@
-SpeechRecognition==3.10
+SpeechRecognition==3.9
 pydub==0.25.1
