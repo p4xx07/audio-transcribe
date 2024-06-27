@@ -27,7 +27,7 @@ This script transcribes audio and video files into SubRip (.srt) subtitle files 
 Run the script using the command line:
 
 ```bash
-python main.py -i input_file_path -o output_file_path -c chunk_length -s start_time
+python main.py -i input_file_path -o output_file_path -c chunk_length -s start_time -p program -k api_key
 ```
 
 Replace the following arguments:
@@ -35,17 +35,15 @@ Replace the following arguments:
 - `output_file_path`: Path for the output subtitle file (.srt).
 - `chunk_length`: Chunk length in milliseconds (default: 10000).
 - `start_time`: Start time in milliseconds (default: 0).
+- `program`: Program to use for transcription, either "google" or "openai".
+- `api_key`: API key for the OpenAI transcription service (required if program is "openai").
 
 **Examples:**
 
-Transcribe audio file:
+Transcribe video file or audio file:
 ```bash
-python script_name.py -i input_audio.wav -o output_subtitle.srt -c 5000 -s 10000
-```
+python script_name.py -i input_video.mp4 -o output_subtitle.srt -c 5000 -s 10000 -p openai -k your_openai_api_key
 
-Transcribe video file (extracts audio first):
-```bash
-python script_name.py -i input_video.mp4 -o output_subtitle.srt -c 5000 -s 10000
 ```
 
 **Note:** Ensure you have proper permissions and necessary codecs installed to handle the input audio/video file formats.
