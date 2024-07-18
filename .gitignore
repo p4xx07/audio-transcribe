@@ -21,4 +21,5 @@
 go.work
 /transcribe/output_subtitle.srt
 /output_subtitle.srt
-temp_audio.wav
+*.wav
+test/*
