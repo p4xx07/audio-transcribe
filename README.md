@@ -35,7 +35,6 @@ Replace the following arguments:
 - `output_file_path`: Path for the output subtitle file (.srt).
 - `chunk_length`: Chunk length in milliseconds (default: 10000).
 - `start_time`: Start time in milliseconds (default: 0).
-- `program`: Program to use for transcription, either "google" or "openai".
 - `api_key`: API key for the OpenAI transcription service (required if program is "openai").
 
 **Examples:**

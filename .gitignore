@@ -23,3 +23,5 @@ go.work
 /output_subtitle.srt
 *.wav
 test/*
+
+*.vtt
